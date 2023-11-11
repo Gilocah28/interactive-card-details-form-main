@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./styles/styles.css">
   <title>Frontend Mentor | Interactive card details form</title>
 
  
@@ -20,8 +20,26 @@
         <img src="/images/bg-main-mobile.png" alt="Backgroun-gradient">
       </picture>
     </div>
-    <div class="right-container">
 
+    <div class="container-card" style="display: none;">
+      <div class="front-card">
+        <img src="/images/bg-card-front.png" alt="Card-fron">
+        <div class="card-details">
+          <img src="/images/card-logo.svg" alt="cardLogo">
+          <p class="card-number">0000 0000 0000 0000</p>
+          <div class="card-details-container">
+            <p class="card-holder-name">Jane Appleseed</p>
+            <p class="card-expired"><span class="card-month">00</span>/<span class="card-year">00</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="back-card">
+        <img src="/images/bg-card-back.png" alt="back-card">
+        <p class="card-cvc"></p>
+      </div>
+    </div>
+
+    <div class="right-container">
       <form>
         <div class="input-group">
           <label for="card-name">Cardholder name</label>
@@ -47,12 +65,13 @@
         <button id="submit">Confirm</button>
       </form>
 
-      <div class="greeting-container">
+      <div class="greeting-container" style="display: none;">
         <img src="/images/icon-complete.svg" alt="circle">
         <h1>Thank you!</h1>
         <p>We've added your card details</p>
         <button id="submitThankyou">Continue</button>
       </div>
+
     </div>
 
 
@@ -64,8 +83,8 @@
  </main>
 
 <!-- 
-  0000 0000 0000 0000
-  Jane Appleseed
+  
+  
   00/00
 
   000
