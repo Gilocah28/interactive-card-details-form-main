@@ -21,9 +21,9 @@
       </picture>
     </div>
 
-    <div class="container-card" style="display: none;">
+    <div class="container-card">
       <div class="front-card">
-        <img src="/images/bg-card-front.png" alt="Card-fron">
+        <img src="/images/bg-card-front.png" alt="Card-fron" class="front">
         <div class="card-details">
           <img src="/images/card-logo.svg" alt="cardLogo">
           <p class="card-number">0000 0000 0000 0000</p>
@@ -35,12 +35,12 @@
       </div>
       <div class="back-card">
         <img src="/images/bg-card-back.png" alt="back-card">
-        <p class="card-cvc"></p>
+        <p class="card-cvc">123</p>
       </div>
     </div>
 
-    <div class="right-container">
-      <form>
+    <div class="container-right">
+      <form id="form">
         <div class="input-group">
           <label for="card-name">Cardholder name</label>
           <input type="text" placeholder="e.g. Jane Appleseed" id="card-name">
@@ -52,24 +52,32 @@
         </div>
 
         <div class="card-date">
-          <div class="input-group">
-            <label>Exp. Date (MM/YY)</label>
-            <input type="text" placeholder="MM" id="month">
-            <input type="text" placeholder="YY" id="year">
-          </div>
-          <div class="input-group">
-            <label>CVC</label>
-            <input type="text" placeholder="e.g. 123" id="year">
+          <label>Exp. Date (MM/YY)</label>
+          <label>CVC</label>
+          <div class="input-wrapper">
+            <div class="input-group">
+              <input type="text" placeholder="MM" id="month">
+            </div>
+            <div class="input-group">
+              <input type="text" placeholder="YY" id="year">
+            </div>
+            <div class="input-group last">
+              <input type="text" placeholder="e.g. 123" id="cvc-number">
+            </div>
           </div>
         </div>
         <button id="submit">Confirm</button>
       </form>
 
-      <div class="greeting-container" style="display: none;">
-        <img src="/images/icon-complete.svg" alt="circle">
-        <h1>Thank you!</h1>
-        <p>We've added your card details</p>
-        <button id="submitThankyou">Continue</button>
+      <div class="thankyou">
+        <div class="greeting-container">
+          <img src="/images/icon-complete.svg" alt="circle">
+          <div class="text-container">
+            <h1>Thank you!</h1>
+            <p>We've added your card details</p>
+          </div>
+          <button id="submitThankyou">Continue</button>
+        </div>
       </div>
 
     </div>
@@ -82,14 +90,6 @@
   </div>
  </main>
 
-<!-- 
-  
-  
-  00/00
-
-  000
-
-  Cardholder Name-->
-  
+  <script src="/src/app.js"></script>
 </body>
 </html>

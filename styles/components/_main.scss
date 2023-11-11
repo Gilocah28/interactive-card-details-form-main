@@ -1,0 +1,157 @@
+.container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include tablet{
+        height: 100vh;
+        flex-direction: row;
+    }
+
+
+    &-left{
+        img{
+            width: 100%;
+            @include tablet{
+                height: 100vh;
+            }
+        }
+    }
+    
+    &-right{
+        height: fit-content;
+        padding: 2rem;
+        @include tablet{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form{
+            margin-top: 4rem;
+            font-size: 15px;
+
+            @include tablet{
+               max-width: 500px;
+            }
+
+            .input-group{
+                display: flex;
+                flex-direction: column;
+
+                input{
+                    padding: 1rem;
+                    font-size: inherit;
+                    color: $Darkgrayishviolet;
+                    margin-top: .50rem;
+                    border-radius: 10px;
+
+                    &:focus{
+                        border: 1px solid $Darkgrayishviolet;
+                        font-family: inherit;
+                        font-weight: 500;
+                        color: $Verydarkviolet;
+                    }
+                }
+
+            }
+            #submit{
+                width: 100%;
+                padding: 1rem;
+                border: none;
+                border-radius: 10px;
+                outline: none;
+                font-size: inherit;
+                font-weight: 500;
+                color: $White;
+                background-color: $Verydarkviolet;
+                letter-spacing: 1px;
+                font-size: 18px;
+
+                &:hover{
+                    cursor: pointer;
+                    transition: opacity 200ms ease;
+                    opacity: .8;
+                }
+
+            }
+
+
+            .card-date{
+                margin: 1.5rem 0;
+                label{
+                    margin-right: 1rem;
+                    font-size: 14px;
+                }
+                .input-wrapper{
+                    margin-top: .20rem;
+                    display: flex;
+                    gap: 1rem;
+                    .input-group{
+                        width: 40%;
+                        #month,#year{
+                            width: 100%;
+                        }
+                    }
+                    .last{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+
+
+
+       .thankyou{
+        display: none;
+            .greeting-container{
+                height: 300px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 6rem;
+
+                @include tablet{
+                    margin-top: 0;
+                }
+                #submitThankyou{
+                    width: 100%;
+                    padding: 1rem;
+                    border: none;
+                    border-radius: 10px;
+                    outline: none;
+                    font-size: inherit;
+                    font-weight: 500;
+                    color: $White;
+                    background-color: $Verydarkviolet;
+                    letter-spacing: 1px;
+                    font-size: 18px;
+                    &:hover{
+                        cursor: pointer;
+                        transition: opacity 200ms ease;
+                        opacity: .8;
+                    }
+                }
+            
+                .text-container{
+                    h1{
+                        margin-bottom: 1rem;
+                        text-transform:uppercase;
+                    }
+                    p{
+                        color: $Darkgrayishviolet;
+                    }
+                }
+
+            }
+       }
+    }
+
+   
+}

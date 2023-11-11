@@ -1,0 +1,97 @@
+.container-card {
+    .front-card{
+        z-index: 10;
+        position: absolute;
+        top: 12rem;
+        left: 1rem;
+        @include laptop{
+            top: 30%;
+            left: 5%;
+        }
+
+        @include tablet{
+            top: 30%;
+            left: 12%;
+        }
+
+        
+        @include mobile{
+            top: 9rem;
+        }
+        
+        
+        .front{
+            width: 70%;
+
+            @include mobile{
+                width: 85%;
+            }
+        }
+        
+        .card-details{
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            
+            img{
+                width: 70px;
+                margin-bottom: 2rem;
+            }
+
+            .card-number{
+                color: $White;
+            }
+
+            .card-details-container{
+                display: flex;
+                min-width: 270px;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1.5rem;
+
+                .card-holder-name, .card-expired{
+                    color: $White;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                }
+                
+            }
+        }
+
+    }
+
+    .back-card{
+        position: absolute;
+        top: 6.2rem;
+        right: 1rem;
+
+        @include laptop{
+            left: 5%;
+        }
+        @include tablet{
+            top: 50%;
+            left: 18%;
+        }
+        @include mobile{
+            top: 3.2rem;
+        }
+
+
+        img{
+            width: 300px;
+        }
+        .card-cvc{
+            position: absolute;
+            top: 4.6rem;
+            right: 2.2rem;
+
+            @include laptop{
+                left: 15%;
+            }
+
+
+            color: $White;
+            font-size: 12px;
+        }
+    }
+}

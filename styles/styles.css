@@ -11,4 +11,264 @@
 
 body {
   font-family: "Space Grotesk", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+main {
+  width: 100%;
+}
+
+p, label {
+  color: hsl(278, 68%, 11%);
+}
+
+input {
+  border: 1px solid hsl(270, 3%, 87%);
+  outline: none;
+}
+
+label {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    height: 100vh;
+    flex-direction: row;
+  }
+}
+.container-left img {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .container-left img {
+    height: 100vh;
+  }
+}
+.container-right {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .container-right {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.container-right form {
+  margin-top: 4rem;
+  font-size: 15px;
+}
+@media screen and (min-width: 768px) {
+  .container-right form {
+    max-width: 500px;
+  }
+}
+.container-right form .input-group {
+  display: flex;
+  flex-direction: column;
+}
+.container-right form .input-group input {
+  padding: 1rem;
+  font-size: inherit;
+  color: hsl(279, 6%, 55%);
+  margin-top: 0.5rem;
+  border-radius: 10px;
+}
+.container-right form .input-group input:focus {
+  border: 1px solid hsl(279, 6%, 55%);
+  font-family: inherit;
+  font-weight: 500;
+  color: hsl(278, 68%, 11%);
+}
+.container-right form #submit {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: inherit;
+  font-weight: 500;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(278, 68%, 11%);
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+.container-right form #submit:hover {
+  cursor: pointer;
+  transition: opacity 200ms ease;
+  opacity: 0.8;
+}
+.container-right form .card-date {
+  margin: 1.5rem 0;
+}
+.container-right form .card-date label {
+  margin-right: 1rem;
+  font-size: 14px;
+}
+.container-right form .card-date .input-wrapper {
+  margin-top: 0.2rem;
+  display: flex;
+  gap: 1rem;
+}
+.container-right form .card-date .input-wrapper .input-group {
+  width: 40%;
+}
+.container-right form .card-date .input-wrapper .input-group #month, .container-right form .card-date .input-wrapper .input-group #year {
+  width: 100%;
+}
+.container-right form .card-date .input-wrapper .last {
+  width: 100%;
+}
+.container-right .thankyou {
+  display: none;
+}
+.container-right .thankyou .greeting-container {
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6rem;
+}
+@media screen and (min-width: 768px) {
+  .container-right .thankyou .greeting-container {
+    margin-top: 0;
+  }
+}
+.container-right .thankyou .greeting-container #submitThankyou {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: inherit;
+  font-weight: 500;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(278, 68%, 11%);
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+.container-right .thankyou .greeting-container #submitThankyou:hover {
+  cursor: pointer;
+  transition: opacity 200ms ease;
+  opacity: 0.8;
+}
+.container-right .thankyou .greeting-container .text-container h1 {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.container-right .thankyou .greeting-container .text-container p {
+  color: hsl(279, 6%, 55%);
+}
+
+.container-card .front-card {
+  z-index: 10;
+  position: absolute;
+  top: 12rem;
+  left: 1rem;
+}
+@media screen and (min-width: 1156px) {
+  .container-card .front-card {
+    top: 30%;
+    left: 5%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container-card .front-card {
+    top: 30%;
+    left: 12%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container-card .front-card {
+    top: 9rem;
+  }
+}
+.container-card .front-card .front {
+  width: 70%;
+}
+@media screen and (max-width: 375px) {
+  .container-card .front-card .front {
+    width: 85%;
+  }
+}
+.container-card .front-card .card-details {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.container-card .front-card .card-details img {
+  width: 70px;
+  margin-bottom: 2rem;
+}
+.container-card .front-card .card-details .card-number {
+  color: hsl(0, 0%, 100%);
+}
+.container-card .front-card .card-details .card-details-container {
+  display: flex;
+  min-width: 270px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.container-card .front-card .card-details .card-details-container .card-holder-name, .container-card .front-card .card-details .card-details-container .card-expired {
+  color: hsl(0, 0%, 100%);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.container-card .back-card {
+  position: absolute;
+  top: 6.2rem;
+  right: 1rem;
+}
+@media screen and (min-width: 1156px) {
+  .container-card .back-card {
+    left: 5%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container-card .back-card {
+    top: 50%;
+    left: 18%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container-card .back-card {
+    top: 3.2rem;
+  }
+}
+.container-card .back-card img {
+  width: 300px;
+}
+.container-card .back-card .card-cvc {
+  position: absolute;
+  top: 4.6rem;
+  right: 2.2rem;
+  color: hsl(0, 0%, 100%);
+  font-size: 12px;
+}
+@media screen and (min-width: 1156px) {
+  .container-card .back-card .card-cvc {
+    left: 15%;
+  }
 }/*# sourceMappingURL=styles.css.map */
