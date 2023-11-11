@@ -1,27 +1,47 @@
 .container-card {
+
+    width: 100%;
+    max-width: 500px;
+    min-width: 200px;
+    height: 315px;
+    position: absolute;
+    top: 3rem;
+
+   
+
+    @include tablet{
+        top: 1rem;
+    }
+
+    @include laptop{
+        height: 450px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 5rem;
+    }
+
+
+    @include mobile{
+        top: 2rem;
+        height: 275px;
+    }
+
+
     .front-card{
         z-index: 10;
         position: absolute;
-        top: 12rem;
-        left: 1rem;
+        bottom: 0;
         @include laptop{
-            top: 30%;
-            left: 5%;
+            top: 0;
+            left: 0;
         }
-
-        @include tablet{
-            top: 30%;
-            left: 12%;
-        }
-
-        
-        @include mobile{
-            top: 9rem;
-        }
-        
-        
         .front{
-            width: 70%;
+            position: relative;
+            width: 80%;
+            left: 1rem;
+
+            
+        
 
             @include mobile{
                 width: 85%;
@@ -30,16 +50,25 @@
         
         .card-details{
             position: absolute;
-            top: 1rem;
-            left: 1rem;
-            
+            top: 2rem;
+            left: 2rem;
+            @include mobile{
+                top: 1rem;
+            }
+
             img{
                 width: 70px;
                 margin-bottom: 2rem;
+                @include mobile{
+                    width: 50px;
+                }
             }
 
             .card-number{
                 color: $White;
+                @include mobile{
+                    font-size: 15px;
+                }
             }
 
             .card-details-container{
@@ -60,38 +89,41 @@
 
     }
 
-    .back-card{
+    
+}
+
+.back-card{
+    img{
         position: absolute;
-        top: 6.2rem;
         right: 1rem;
+        width: 80%;
 
         @include laptop{
-            left: 5%;
+            bottom: 0;
         }
-        @include tablet{
-            top: 50%;
-            left: 18%;
+    }
+    .card-cvc{
+        position: absolute;
+        right: 4rem;
+        top: 5.5rem;
+        color: $White;
+        font-size: 12px;
+
+        @include laptop{
+            right: 4rem;
+            top: 20.5rem;
         }
+
         @include mobile{
-            top: 3.2rem;
-        }
-
-
-        img{
-            width: 300px;
-        }
-        .card-cvc{
-            position: absolute;
             top: 4.6rem;
-            right: 2.2rem;
-
-            @include laptop{
-                left: 15%;
-            }
-
-
-            color: $White;
-            font-size: 12px;
         }
+    }
+}
+
+.errorBorder{
+    border: 1px solid $errorRed;
+    color: $errorRed;
+    &::placeholder{
+        color: $errorRed;
     }
 }

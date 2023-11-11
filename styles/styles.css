@@ -69,6 +69,7 @@ label {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -99,30 +100,17 @@ label {
   font-weight: 500;
   color: hsl(278, 68%, 11%);
 }
-.container-right form #submit {
-  width: 100%;
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
-  outline: none;
-  font-size: inherit;
-  font-weight: 500;
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(278, 68%, 11%);
-  letter-spacing: 1px;
-  font-size: 18px;
-}
-.container-right form #submit:hover {
-  cursor: pointer;
-  transition: opacity 200ms ease;
-  opacity: 0.8;
-}
 .container-right form .card-date {
   margin: 1.5rem 0;
 }
 .container-right form .card-date label {
   margin-right: 1rem;
   font-size: 14px;
+}
+@media screen and (max-width: 375px) {
+  .container-right form .card-date label {
+    font-size: 10px;
+  }
 }
 .container-right form .card-date .input-wrapper {
   margin-top: 0.2rem;
@@ -137,6 +125,11 @@ label {
 }
 .container-right form .card-date .input-wrapper .last {
   width: 100%;
+}
+@media screen and (max-width: 375px) {
+  .container-right form .card-date .input-wrapper .last {
+    width: 50%;
+  }
 }
 .container-right .thankyou {
   display: none;
@@ -181,31 +174,80 @@ label {
   color: hsl(279, 6%, 55%);
 }
 
-.container-card .front-card {
-  z-index: 10;
-  position: absolute;
-  top: 12rem;
-  left: 1rem;
+.errorState {
+  display: none;
+  color: hsl(0, 100%, 66%);
+  font-size: 12px;
+  margin-top: 0.3rem;
+  font-style: italic;
 }
-@media screen and (min-width: 1156px) {
-  .container-card .front-card {
-    top: 30%;
-    left: 5%;
-  }
+
+.btnSub {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: inherit;
+  font-weight: 500;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(278, 68%, 11%);
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+.btnSub:hover {
+  cursor: pointer;
+  transition: opacity 200ms ease;
+  opacity: 0.8;
 }
 @media screen and (min-width: 768px) {
-  .container-card .front-card {
-    top: 30%;
-    left: 12%;
+  .btnSub {
+    max-width: 500px;
+  }
+}
+
+.container-card {
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+  height: 315px;
+  position: absolute;
+  top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .container-card {
+    top: 1rem;
+  }
+}
+@media screen and (min-width: 1156px) {
+  .container-card {
+    height: 450px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5rem;
   }
 }
 @media screen and (max-width: 375px) {
+  .container-card {
+    top: 2rem;
+    height: 275px;
+  }
+}
+.container-card .front-card {
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+}
+@media screen and (min-width: 1156px) {
   .container-card .front-card {
-    top: 9rem;
+    top: 0;
+    left: 0;
   }
 }
 .container-card .front-card .front {
-  width: 70%;
+  position: relative;
+  width: 80%;
+  left: 1rem;
 }
 @media screen and (max-width: 375px) {
   .container-card .front-card .front {
@@ -214,15 +256,30 @@ label {
 }
 .container-card .front-card .card-details {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 2rem;
+  left: 2rem;
+}
+@media screen and (max-width: 375px) {
+  .container-card .front-card .card-details {
+    top: 1rem;
+  }
 }
 .container-card .front-card .card-details img {
   width: 70px;
   margin-bottom: 2rem;
 }
+@media screen and (max-width: 375px) {
+  .container-card .front-card .card-details img {
+    width: 50px;
+  }
+}
 .container-card .front-card .card-details .card-number {
   color: hsl(0, 0%, 100%);
+}
+@media screen and (max-width: 375px) {
+  .container-card .front-card .card-details .card-number {
+    font-size: 15px;
+  }
 }
 .container-card .front-card .card-details .card-details-container {
   display: flex;
@@ -236,39 +293,43 @@ label {
   font-size: 12px;
   letter-spacing: 1px;
 }
-.container-card .back-card {
+
+.back-card img {
   position: absolute;
-  top: 6.2rem;
   right: 1rem;
+  width: 80%;
 }
 @media screen and (min-width: 1156px) {
-  .container-card .back-card {
-    left: 5%;
+  .back-card img {
+    bottom: 0;
   }
 }
-@media screen and (min-width: 768px) {
-  .container-card .back-card {
-    top: 50%;
-    left: 18%;
-  }
-}
-@media screen and (max-width: 375px) {
-  .container-card .back-card {
-    top: 3.2rem;
-  }
-}
-.container-card .back-card img {
-  width: 300px;
-}
-.container-card .back-card .card-cvc {
+.back-card .card-cvc {
   position: absolute;
-  top: 4.6rem;
-  right: 2.2rem;
+  right: 4rem;
+  top: 5.5rem;
   color: hsl(0, 0%, 100%);
   font-size: 12px;
 }
 @media screen and (min-width: 1156px) {
-  .container-card .back-card .card-cvc {
-    left: 15%;
+  .back-card .card-cvc {
+    right: 4rem;
+    top: 20.5rem;
   }
+}
+@media screen and (max-width: 375px) {
+  .back-card .card-cvc {
+    top: 4.6rem;
+  }
+}
+
+.errorBorder {
+  border: 1px solid hsl(0, 100%, 66%);
+  color: hsl(0, 100%, 66%);
+}
+.errorBorder::-moz-placeholder {
+  color: hsl(0, 100%, 66%);
+}
+.errorBorder::placeholder {
+  color: hsl(0, 100%, 66%);
 }/*# sourceMappingURL=styles.css.map */

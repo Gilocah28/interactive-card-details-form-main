@@ -26,7 +26,7 @@
         <img src="/images/bg-card-front.png" alt="Card-fron" class="front">
         <div class="card-details">
           <img src="/images/card-logo.svg" alt="cardLogo">
-          <p class="card-number">0000 0000 0000 0000</p>
+          <p class="card-number" id="cardHolderNumber">0000 0000 0000 0000</p>
           <div class="card-details-container">
             <p class="card-holder-name">Jane Appleseed</p>
             <p class="card-expired"><span class="card-month">00</span>/<span class="card-year">00</span></p>
@@ -44,11 +44,13 @@
         <div class="input-group">
           <label for="card-name">Cardholder name</label>
           <input type="text" placeholder="e.g. Jane Appleseed" id="card-name">
+          <p class="errorState name-error">Failed is empty</p>
         </div>
 
         <div class="input-group">
           <label for="card-number">Card Number</label>
           <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="card-number">
+          <p class="errorState cardNumber-error">Failed is empty</p>
         </div>
 
         <div class="card-date">
@@ -57,17 +59,19 @@
           <div class="input-wrapper">
             <div class="input-group">
               <input type="text" placeholder="MM" id="month">
+              <p class="errorState year-error">Can't be blank</p>
             </div>
             <div class="input-group">
               <input type="text" placeholder="YY" id="year">
             </div>
             <div class="input-group last">
               <input type="text" placeholder="e.g. 123" id="cvc-number">
+              <p class="errorState cvc-error">Can't be blank</p>
             </div>
           </div>
         </div>
-        <button id="submit">Confirm</button>
       </form>
+      <button id="submit" class="btnSub">Confirm</button>
 
       <div class="thankyou">
         <div class="greeting-container">

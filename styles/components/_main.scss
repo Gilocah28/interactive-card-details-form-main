@@ -26,6 +26,7 @@
             width: 100%;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
@@ -58,33 +59,14 @@
                 }
 
             }
-            #submit{
-                width: 100%;
-                padding: 1rem;
-                border: none;
-                border-radius: 10px;
-                outline: none;
-                font-size: inherit;
-                font-weight: 500;
-                color: $White;
-                background-color: $Verydarkviolet;
-                letter-spacing: 1px;
-                font-size: 18px;
-
-                &:hover{
-                    cursor: pointer;
-                    transition: opacity 200ms ease;
-                    opacity: .8;
-                }
-
-            }
-
-
             .card-date{
                 margin: 1.5rem 0;
                 label{
                     margin-right: 1rem;
                     font-size: 14px;
+                    @include mobile{
+                        font-size: 10px;
+                    }
                 }
                 .input-wrapper{
                     margin-top: .20rem;
@@ -98,6 +80,10 @@
                     }
                     .last{
                         width: 100%;
+
+                        @include mobile{
+                            width: 50%;
+                        }
                     }
                 }
             }
@@ -152,6 +138,36 @@
             }
        }
     }
+}
 
+.errorState{
+    display: none;
+    color: $errorRed;
+    font-size: 12px;
+    margin-top: .30rem;
+    font-style: italic;
    
+}
+
+.btnSub{
+    width: 100%;
+    padding: 1rem;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        font-size: inherit;
+        font-weight: 500;
+        color: $White;
+        background-color: $Verydarkviolet;
+        letter-spacing: 1px;
+        font-size: 18px;
+
+        &:hover{
+            cursor: pointer;
+            transition: opacity 200ms ease;
+            opacity: .8;
+        }
+        @include tablet{
+            max-width: 500px;
+         }
 }
